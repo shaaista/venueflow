@@ -1,0 +1,3 @@
+# The backend is a separate app — Vercel only builds the Next.js frontend.
+backend/
+*.log
