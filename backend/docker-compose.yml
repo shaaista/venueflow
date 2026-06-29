@@ -1,0 +1,54 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: venueflow
+      POSTGRES_PASSWORD: venueflow
+      POSTGRES_DB: venueflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - vf_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U venueflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - vf_redisdata:/data
+
+  api:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://venueflow:venueflow@db:5432/venueflow?schema=public
+      REDIS_URL: redis://redis:6379
+    ports:
+      - "4000:4000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  worker:
+    build: .
+    command: sh -c "npm run worker"
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://venueflow:venueflow@db:5432/venueflow?schema=public
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+volumes:
+  vf_pgdata:
+  vf_redisdata:
