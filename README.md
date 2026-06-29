@@ -44,8 +44,12 @@ That's it — the demo works standalone on mock data. Login/Register work in dem
 ### Demo-mode flag (`.env.local`)
 
 ```
-NEXT_PUBLIC_API_ENABLED=false   # mock demo (default)
-# NEXT_PUBLIC_API_ENABLED=true  # talk to the real backend (needs a DB)
+# Leave unset or set to false for the standalone demo (safe default)
+NEXT_PUBLIC_API_ENABLED=false
+
+# Only enable this when a real backend is deployed and reachable
+# NEXT_PUBLIC_API_ENABLED=true
+# NEXT_PUBLIC_API_URL=https://your-api.example.com/api/v1
 ```
 
 ## ▲ Deploy on Vercel

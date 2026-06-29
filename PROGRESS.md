@@ -44,7 +44,7 @@ cd backend && npm install && npm run dev   # → http://localhost:4000  (docs at
   `ops@venueflow.app`, both `password123`.
 
 ### Flags (`.env.local`)
-- `NEXT_PUBLIC_API_ENABLED=false` → pure mock demo (current default)
+- `NEXT_PUBLIC_API_ENABLED` unset or `false` → pure mock demo (safe default; best for Vercel frontend-only deploys)
 - `NEXT_PUBLIC_API_ENABLED=true` + `NEXT_PUBLIC_API_URL` → use the real API
 
 ---
