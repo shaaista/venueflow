@@ -2,6 +2,10 @@
 
 Single source of truth for what's built. Newest changelog entries at the top.
 
+> **🚀 LIVE:** **https://venueflow-three.vercel.app** · Repo: **https://github.com/shaaista/venueflow**
+> Deployed on Vercel (project `venueflow`, sanas-projects). Pushes to `main` can be
+> wired to auto-redeploy via the project's Settings → Git. Runs on Next.js 16.
+
 > **🎉 VenueFlow v1 — DEMO COMPLETE.** The full event lifecycle is clickable end to
 > end in demo mode (no database): public enquiry → lead → convert to customer →
 > create event → generate quote → accept → generate invoice → pay → complete →

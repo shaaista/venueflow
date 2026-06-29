@@ -1,5 +1,7 @@
 # VenueFlow
 
+**🚀 Live demo:** https://venueflow-three.vercel.app
+
 A white-label, multi-tenant **Venue & Event Enquiry CRM** for luxury hospitality —
 cafes, hotels, resorts, banquet halls, and wedding venues. Manage the full event
 lifecycle from public enquiry to payment, with a polished admin CRM, a customer
@@ -24,7 +26,7 @@ portal, and a super-admin console.
 
 ## 🧱 Tech stack
 
-Next.js 15 (App Router) · React 19 · TypeScript · TailwindCSS · Framer Motion ·
+Next.js 16 (App Router) · React 19 · TypeScript · TailwindCSS · Framer Motion ·
 Recharts · @tanstack/react-query · cmdk
 
 The `backend/` folder contains a separate, production-shaped Express + Prisma API for
